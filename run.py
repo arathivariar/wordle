@@ -20,7 +20,8 @@ def game_instruction():
     """
     Function to explain the game rules to the user
     """
-    print("""Welcome to Wordle. \n
+    print("""WELCOME TO WORDLE. \n
+    "============================"\n
     Wordle is a single player game.\n
     The player has to guess a five letter English word.\n
     You have six attempts.\n
@@ -37,8 +38,9 @@ def check_word():
     attempt = 6
     while attempt > 0:
      guess = str(input("Guess the word. Please enter a 5 letter English word: \n"))
+     validate_data(guess)
      if guess == hidden_word:
-          print("You guessed the words correctly! YOU WIN\n")
+          print("You guessed the word correctly! YOU WIN !!!\n")
           break
      else:
           attempt = attempt - 1
@@ -52,7 +54,21 @@ def check_word():
                else:
                     print(" ❌ ")
           if attempt == 0:
-             print(" Game over !!!! \n")
+             print(" GAME OVER !!! \n")
+
+def validate_data(guess):
+    """
+    Inside the try, check whether the user input consists of 5 English letters.
+    Raises ValueError if the input is not valid
+    or if there aren't exactly 5 letters.
+    """
+    try:
+        if len(guess) != 5:
+            raise ValueError(
+                f"Exactly 5 letters required, you provided {len(guess)}"
+            )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
 
 
 game_instruction()
