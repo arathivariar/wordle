@@ -15,6 +15,8 @@ SHEET = GSPREAD_CLIENT.open('words')
 words = SHEET.worksheet('words')
 data = words.get_all_values()
 print(data)
+# get a randon word from the data list each time
+
 
 def game_instruction():
     """
@@ -26,9 +28,43 @@ def game_instruction():
     The player has to guess a five letter English word.\n
     You have six attempts.\n
     Your Progress Guide "✔  ➕  ❌"\n
-    "  ✔  " indicates that the letter at that position was guessed correctly.\n
-    "  ➕  " indicates that the letter at that position is in the hidden word, but in a different position.\n
-    "  ❌  " indicates that the letter at that position is wrong, and is not in the hidden word.\n   """)
+    "  ✔  " indicates that the letter and its position is correct.\n
+    "  ➕  " indicates that the letter is there, but in a different position.\n
+    "  ❌  " indicates that the letter not there in the word.\n """)
+
+
+def validate_data_length(guess):
+    """
+    Function to check whether the user input consists of 5 English letters.
+    """
+    try:
+        if len(guess) != 5:
+            raise ValueError(
+                f"Exactly 5 letters required, you provided {len(guess)}"
+            )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+
+
+def encode_data(guess):
+    """
+    Function to check whether the user input contains ascii characters only
+    """
+    try:
+        guess = guess.encode('ascii')
+    except UnicodeError as e:
+        print(f'The word {e.object} has a character at position {e.start} that cannot be encoded in {e.encoding} due to {e.reason}')
+    return guess
+
+
+def validate_data_content(guess):
+    """
+    Function to check whether the user input contains alphabets only
+    """
+    if guess.isalpha() == False:
+        raise ValueError(
+            f"Invalid data: The word should contain English alphabets only. Please enter again\n"
+        )
 
 def check_word():
     """
@@ -38,7 +74,9 @@ def check_word():
     attempt = 6
     while attempt > 0:
      guess = str(input("Guess the word. Please enter a 5 letter English word: \n"))
-     validate_data(guess)
+     validate_data_length(guess)
+     encode_data(guess)
+     validate_data_content(guess)
      if guess == hidden_word:
           print("You guessed the word correctly! YOU WIN !!!\n")
           break
@@ -56,20 +94,12 @@ def check_word():
           if attempt == 0:
              print(" GAME OVER !!! \n")
 
-def validate_data(guess):
-    """
-    Inside the try, check whether the user input consists of 5 English letters.
-    Raises ValueError if the input is not valid
-    or if there aren't exactly 5 letters.
-    """
-    try:
-        if len(guess) != 5:
-            raise ValueError(
-                f"Exactly 5 letters required, you provided {len(guess)}"
-            )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
 
+def main():
+    """
+    Run all program functions
+    """
+    game_instruction()
+    check_word()
 
-game_instruction()
-check_word()
+main()
