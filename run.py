@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+import random
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -14,16 +15,17 @@ SHEET = GSPREAD_CLIENT.open('words')
 
 words = SHEET.worksheet('words')
 data = words.get_all_values()
-print(data)
-# get a randon word from the data list each time
+# get a random word from the data list each time
+hidden_word = random.choice(data)
+print (f"Hidden Word is {hidden_word}")
 
 
 def game_instruction():
     """
     Function to explain the game rules to the user
     """
-    print("""WELCOME TO WORDLE. \n
-    "============================"\n
+    print("""WELCOME TO WORDLE \n
+    ============================\n
     Wordle is a single player game.\n
     The player has to guess a five letter English word.\n
     You have six attempts.\n
@@ -70,27 +72,27 @@ def check_word():
     """
     Function to check the word entered by user with the actual word
     """
-    hidden_word = "snail"
     attempt = 6
     while attempt > 0:
      guess = str(input("Guess the word. Please enter a 5 letter English word: \n"))
      validate_data_length(guess)
      encode_data(guess)
      validate_data_content(guess)
+     guess = guess.upper()
      if guess == hidden_word:
           print("You guessed the word correctly! YOU WIN !!!\n")
           break
      else:
           attempt = attempt - 1
-          print(f"you have {attempt} attempt(s) ,, \n ")
+          print(f"You have {attempt} attempt(s) left ,, \n ")
           for char, word in zip(hidden_word, guess):
                if word in hidden_word and word in char:
-                    print(word + " ✔ ")
-
+                    print(word + " ✔ ",end=" ")
+                    
                elif word in hidden_word:
-                    print(word + " ➕ ")
+                    print(word + " ➕ ",end=" ")
                else:
-                    print(" ❌ ")
+                    print(" ❌ ",end=" ")
           if attempt == 0:
              print(" GAME OVER !!! \n")
 
