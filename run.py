@@ -25,11 +25,11 @@ def game_instruction():
     Function to explain the game rules to the user
     """
     print("""WELCOME TO WORDLE \n
-    ============================\n
+    ==================================================\n
     Wordle is a single player game.\n
     The player has to guess a five letter English word.\n
     You have six attempts.\n
-    Your Progress Guide "✔  ➕  ❌"\n
+    Your Progress Guide "  ✔  ➕  ❌  "\n
     "  ✔  " indicates that the letter and its position is correct.\n
     "  ➕  " indicates that the letter is there, but in a different position.\n
     "  ❌  " indicates that the letter not there in the word.\n """)
@@ -87,12 +87,12 @@ def check_word():
             break
         else:
             attempt = attempt - 1
-            print(f"You have {attempt} attempt(s) left ,, \n ")
+            print(f"You have {attempt} attempt(s) left \n")
             for char, word in zip(hidden_word, guess):
                 if word in hidden_word and word in char:
-                    print(word + " ✔ ", end=" ")
+                    print(" ✔ ", end=" ")
                 elif word in hidden_word:
-                    print(word + " ➕ ", end=" ")
+                    print(" ➕ ", end=" ")
                 else:
                     print(" ❌ ", end=" ")
             if attempt == 0:
