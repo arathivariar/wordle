@@ -46,6 +46,7 @@ def validate_data_length(guess):
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
+    return
 
 
 def encode_data(guess):
@@ -63,10 +64,11 @@ def validate_data_content(guess):
     """
     Function to check whether the user input contains alphabets only
     """
-    if guess.isalpha() == False:
+    if not (guess.isalpha()):
         raise ValueError(
-            f"Invalid data: The word should contain English alphabets only. Please enter again\n"
+            f"Invalid data: The word should contain English alphabets only\n"
         )
+    return
 
 
 def check_word():
