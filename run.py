@@ -17,7 +17,7 @@ words = SHEET.worksheet('words')
 data = words.get_all_values()
 # get a random word from the data list each time
 hidden_word = random.choice(data)
-print (f"Hidden Word is {hidden_word}")
+print(f"Hidden Word is {hidden_word}")
 
 
 def game_instruction():
@@ -68,33 +68,33 @@ def validate_data_content(guess):
             f"Invalid data: The word should contain English alphabets only. Please enter again\n"
         )
 
+
 def check_word():
     """
     Function to check the word entered by user with the actual word
     """
     attempt = 6
     while attempt > 0:
-     guess = str(input("Guess the word. Please enter a 5 letter English word: \n"))
-     validate_data_length(guess)
-     encode_data(guess)
-     validate_data_content(guess)
-     guess = guess.upper()
-     if guess == hidden_word:
-          print("You guessed the word correctly! YOU WIN !!!\n")
-          break
-     else:
-          attempt = attempt - 1
-          print(f"You have {attempt} attempt(s) left ,, \n ")
-          for char, word in zip(hidden_word, guess):
-               if word in hidden_word and word in char:
-                    print(word + " ✔ ",end=" ")
-                    
-               elif word in hidden_word:
-                    print(word + " ➕ ",end=" ")
-               else:
-                    print(" ❌ ",end=" ")
-          if attempt == 0:
-             print(" GAME OVER !!! \n")
+        guess = str(input("Guess the word. Please enter a 5 letter English word: \n"))
+        validate_data_length(guess)
+        encode_data(guess)
+        validate_data_content(guess)
+        guess = guess.upper()
+        if guess == hidden_word:
+            print("You guessed the word correctly! YOU WIN !!!\n")
+            break
+        else:
+            attempt = attempt - 1
+            print(f"You have {attempt} attempt(s) left ,, \n ")
+            for char, word in zip(hidden_word, guess):
+                if word in hidden_word and word in char:
+                    print(word + " ✔ ", end=" ")
+                elif word in hidden_word:
+                    print(word + " ➕ ", end=" ")
+                else:
+                    print(" ❌ ", end=" ")
+            if attempt == 0:
+                print(" GAME OVER !!! \n")
 
 
 def main():
@@ -103,5 +103,6 @@ def main():
     """
     game_instruction()
     check_word()
+
 
 main()
