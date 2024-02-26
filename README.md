@@ -3,7 +3,7 @@
 
 Wordle is a word puzzle game that challenges its players to guess a five-letter  English word in six tries. I have created a version of Wordle with a few minor variations using Python.
 
- ![Website view across device screens](assets/screenshots/website_responsive_screens.png)   
+ ![Wordle](assets/screenshots/wordle.png)   
 
 
 # Table of Contents:
@@ -42,8 +42,6 @@ The flowchart for the application made using Lucidcharts is as shown below:
 ![Flowchart](assets/screenshots/flowchart.jpg)  
 
 
-**Text & Background colour:**
-
 
 # Features
 
@@ -54,7 +52,7 @@ The flowchart for the application made using Lucidcharts is as shown below:
 + Check Word 
 
 
-# Languages Used:
+# Language Used:
 + Python
 
 # Game Instructions     
@@ -114,9 +112,9 @@ There are no unfixed bugs existing in this website as per my knowledge.
 
 
 # Credits for Content and Media:
-* Website screenshot across devices: [Am I Responsive?](https://ui.dev/amiresponsive)
-* Basic game structure: [Free Code Camp]( https://www.freecodecamp.org/news/building-a-wordle-game/ )
-* Words used in Wordle: [Rock Paper Shotgun]( https://www.rockpapershotgun.com/wordle-past-answers )
+* Flowchart: Powerpoint
+* Basic game structure: [Free Code Camp]( https://www.freecodecamp.org/news/building-a-wordle-game/)
+* Words used in Wordle: [Rock Paper Shotgun]( https://www.rockpapershotgun.com/wordle-past-answers)
 * Love Sandwiches project
 * My Mentor Martina for her guidance and the Slack Community for their support.
 

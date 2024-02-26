@@ -17,7 +17,7 @@ words = SHEET.worksheet('words')
 data = words.get_all_values()
 # get a random word from the data list each time
 hidden_word = random.choice(data)
-print(f"Hidden Word is {hidden_word}")
+print(f"Hidden Word is {hidden_word}") # to be removed before submitting
 
 
 def game_instruction():
