@@ -1,7 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import random
-from colorama import Fore, Back, Style
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -25,7 +24,7 @@ def game_instruction():
     """
     Function to explain the game rules to the user
     """
-    print("""WELCOME TO WORDLE \n
+    print("""\033[1m WELCOME TO WORDLE \n
     ==================================================\n
     Wordle is a single player game.\n
     The player has to guess a five letter English word.\n
@@ -86,33 +85,26 @@ def check_word():
     """
     attempt = 6
     while attempt > 0:
-        print(Style.RESET_ALL)
         guess = str(input("Guess the word. Please enter a 5 letter word: \n"))
         validate_data_length(guess)
         validate_data_content(guess)
         guess = guess.upper()
         validate_data_value(guess)
         if guess == hidden_word:
-            print("You guessed the word correctly! YOU WIN !!!\n")
+            print("You guessed the word correctly! \033[1m YOU WIN !!!\n")
             break
         else:
             attempt = attempt - 1
             print(f"You have {attempt} attempt(s) left \n")
             for char, word in zip(hidden_word, guess):
                 if word in hidden_word and word in char:
-                    print(Fore.BLACK + word + " ✔ ", end=" ")
-                    print(Back.GREEN)
-                    print(Style.DIM)
-                    # print(word + " ✔ ", end=" ")
+                    print(u"\u001b[32m" + word + "\u001b[0m", end=" ")
                 elif word in hidden_word:
-                    print(Fore.BLACK + word + " ➕ ", end=" ")
-                    print(Back.YELLOW)
-                    print(Style.DIM)
-                    # print(word + " ➕ ", end=" ")
+                    print(u"\u001b[33m" + word + "\u001b[0m", end=" ")
                 else:
-                    print(" ❌ ", end=" ")
+                    print(u"\u001b[30m" + word + "\u001b[0m", end=" ")
             if attempt == 0:
-                print(" GAME OVER !!! \n")
+                print("\033[1m GAME OVER !!! \n")
 
 
 def main():
