@@ -1,7 +1,7 @@
 
 # Wordle    
 
-Wordle is a word puzzle game that challenges its players to guess a five-letter  English word in six tries. I have created a version of Wordle with a few minor variations using Python.
+Wordle is a word puzzle game that challenges its players to guess a five-letter  English word in six attempts. I have created a version of Wordle with a few minor variations using Python.
 
  ![Wordle](assets/screenshots/wordle.png)   
 
@@ -13,7 +13,7 @@ Wordle is a word puzzle game that challenges its players to guess a five-letter 
 
 	- [Existing Features](#existing-features) 
 
-        -    [Languages Used](#languages-used)
+        -    [Language Used](#language-used)
 
         -    [Game Instructions](#game-instructions)    
 
@@ -37,7 +37,7 @@ Wordle is a word puzzle game that challenges its players to guess a five-letter 
 
 # Design:   
 
-The flowchart for the application made using Lucidcharts is as shown below:  
+The flowchart for the application is as shown below:  
 
 ![Flowchart](assets/screenshots/flowchart.jpg)  
 
