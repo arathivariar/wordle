@@ -108,6 +108,7 @@ There are no unfixed bugs existing in this website as per my knowledge.
 * [Google Cloud]( https://console.cloud.google.com/)
 * [Google Sheets API](https://console.cloud.google.com/apis/api/sheets.googleapis.com)
 * [Google Drive API]( https://console.cloud.google.com/apis/api/drive.googleapis.com/)
+* [Colorama](https://pypi.org/project/colorama/)
 * Validating Python: [PEP8]( https://pep8ci.herokuapp.com/)
 
 
@@ -115,6 +116,7 @@ There are no unfixed bugs existing in this website as per my knowledge.
 * Flowchart: Powerpoint
 * Basic game structure: [Free Code Camp]( https://www.freecodecamp.org/news/building-a-wordle-game/)
 * Words used in Wordle: [Rock Paper Shotgun]( https://www.rockpapershotgun.com/wordle-past-answers)
+* Print Colors in Python terminal: [GeeksForGeeks](https://www.geeksforgeeks.org/print-colors-python-terminal/)
 * Love Sandwiches project
 * My Mentor Martina for her guidance and the Slack Community for their support.
 

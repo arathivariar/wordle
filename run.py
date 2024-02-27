@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import random
+from colorama import Fore, Back, Style
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -77,6 +78,7 @@ def check_word():
     """
     attempt = 6
     while attempt > 0:
+        print(Style.RESET_ALL)
         guess = str(input("Guess the word. Please enter a 5 letter English word: \n"))
         validate_data_length(guess)
         encode_data(guess)
@@ -90,9 +92,15 @@ def check_word():
             print(f"You have {attempt} attempt(s) left \n")
             for char, word in zip(hidden_word, guess):
                 if word in hidden_word and word in char:
-                    print(" ✔ ", end=" ")
+                    print(Fore.BLACK + word + " ✔ ", end=" ")
+                    print(Back.GREEN)
+                    print(Style.DIM)
+                    # print(word + " ✔ ", end=" ")
                 elif word in hidden_word:
-                    print(" ➕ ", end=" ")
+                    print(Fore.BLACK + word + " ➕ ", end=" ")
+                    print(Back.YELLOW)
+                    print(Style.DIM)
+                    # print(word + " ➕ ", end=" ")
                 else:
                     print(" ❌ ", end=" ")
             if attempt == 0:
