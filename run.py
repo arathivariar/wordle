@@ -18,7 +18,7 @@ words = SHEET.worksheet('words')
 data = words.get_all_values()
 # get a random word from the data list each time
 hidden_word = random.choice(data)
-print(f"Hidden Word is {hidden_word}") # to be removed before submitting
+print(f"Hidden Word is {hidden_word}")  # to be removed before submitting
 
 
 def game_instruction():
@@ -50,17 +50,6 @@ def validate_data_length(guess):
     return
 
 
-def encode_data(guess):
-    """
-    Function to check whether the user input contains ascii characters only
-    """
-    try:
-        guess = guess.encode('ascii')
-    except UnicodeError as e:
-        print(f'The word {e.object} has a character at position {e.start} that cannot be encoded in {e.encoding} due to {e.reason}')
-    return guess
-
-
 def validate_data_content(guess):
     """
     Function to check whether the user input contains alphabets only
@@ -68,10 +57,26 @@ def validate_data_content(guess):
     try:
         if not (guess.isalpha()):
             raise ValueError(
-                f"Invalid data: The word should contain English alphabets only\n"
+                f"The word should contain English alphabets only"
             )
     except ValueError as e:
-            print(f"Invalid data: {e}, please try again.\n")
+        print(f"Invalid data: {e}, please try again.\n")
+    return
+
+
+def validate_data_value(guess):
+    """
+    Function to check whether the user input contains ascii characters only
+    """
+    try:
+        for char in guess:
+            converted = ord(char)
+            # check whether the ascii values are between 65 and 90 (A to Z)
+            if converted not in range(65, 91):
+                raise ValueError(
+                    f"The word should contain English alphabets only")
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
     return
 
 
@@ -82,11 +87,11 @@ def check_word():
     attempt = 6
     while attempt > 0:
         print(Style.RESET_ALL)
-        guess = str(input("Guess the word. Please enter a 5 letter English word: \n"))
+        guess = str(input("Guess the word. Please enter a 5 letter word: \n"))
         validate_data_length(guess)
-        encode_data(guess)
         validate_data_content(guess)
         guess = guess.upper()
+        validate_data_value(guess)
         if guess == hidden_word:
             print("You guessed the word correctly! YOU WIN !!!\n")
             break
