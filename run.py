@@ -65,10 +65,13 @@ def validate_data_content(guess):
     """
     Function to check whether the user input contains alphabets only
     """
-    if not (guess.isalpha()):
-        raise ValueError(
-            f"Invalid data: The word should contain English alphabets only\n"
-        )
+    try:
+        if not (guess.isalpha()):
+            raise ValueError(
+                f"Invalid data: The word should contain English alphabets only\n"
+            )
+    except ValueError as e:
+            print(f"Invalid data: {e}, please try again.\n")
     return
 
 
