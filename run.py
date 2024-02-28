@@ -18,7 +18,6 @@ words = SHEET.worksheet('words')
 data_list = words.get_all_values()
 random_word_list = random.choice(data_list)
 actual_word = ''.join(random_word_list)
-print(f"Actual Word is {actual_word}")  # to be removed before submitting
 
 
 def game_instruction():
