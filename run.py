@@ -81,7 +81,7 @@ def check_word():
     """
     attempt = 6
     while attempt > 0:
-        guess = str(input(f"{Styles.RESET}Guess the 5 letter word: \n"))
+        guess = str(input(f"{Styles.RESET}\nGuess the 5 letter word: \n"))
         if validate_data_length(guess) is False:
             continue
         if validate_data_content(guess) is False:
