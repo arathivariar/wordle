@@ -101,7 +101,8 @@ def check_word():
                 else:
                     print(f"{Styles.BOLD}{Styles.RED}{char_guess}", end=' ')
             if attempt == 0:
-                print(f"{Styles.BOLD} GAME OVER !!! {Styles.RESET}\n")
+                print(f"{Styles.RESET}{Styles.BOLD} GAME OVER !!!\n")
+                print(f"The word is {actual_word}")
 
 
 def main():
