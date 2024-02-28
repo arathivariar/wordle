@@ -15,10 +15,10 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('words')
 
 words = SHEET.worksheet('words')
-data = words.get_all_values()
-# get a random word from the word list each time
-hidden_word = random.choice(data)
-print(f"Hidden Word is {hidden_word}")  # to be removed before submitting
+data_list = words.get_all_values()
+random_word_list = random.choice(data_list)
+actual_word = ''.join(random_word_list)
+print(f"Actual Word is {actual_word}")  # to be removed before submitting
 
 
 def game_instruction():
@@ -26,58 +26,52 @@ def game_instruction():
     Function to explain the game rules to the user
     """
     print(f"""{Styles.BOLD} WELCOME TO WORDLE \n
-    ==================================================\n
+    =================================================={Styles.RESET}\n
     Wordle is a single player game.\n
     The player has to guess a five letter English word.\n
     You have six attempts.\n
     Your Progress Guide: \n
-    Green indicates that the letter and its position is correct.\n
-    Yellow indicates that the letter is there, but in a different position.\n
-    Red indicates that the letter not there in the word. {Styles.RESET}\n """)
+    {Styles.GREEN}
+    Green indicates that the letter and its position is correct.
+    {Styles.RESET}
+    {Styles.BLUE}
+    Blue indicates that the letter is there, but in a different position.
+    {Styles.RESET}
+    {Styles.RED}
+    Red indicates that the letter not there in the word.
+    {Styles.RESET}""")
 
 
 def validate_data_length(guess):
     """
     Function to check whether the user input consists of 5 letters.
     """
+    len_flag = True
     try:
         if len(guess) != 5:
+            len_flag = False
             raise ValueError(
                 f"Exactly 5 letters required, you provided {len(guess)}"
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
-    return
+    return len_flag
 
 
 def validate_data_content(guess):
     """
     Function to check whether the user input contains alphabets only
     """
+    content_flag = True
     try:
         if not (guess.isalpha()):
+            content_flag = False
             raise ValueError(
                 f"The word should contain English alphabets only"
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
-    return
-
-
-def validate_data_value(guess):
-    """
-    Function to check whether the user input contains ascii characters only
-    """
-    try:
-        for char in guess:
-            converted = ord(char)
-            # check whether the ascii values are between 65 and 90 (A to Z)
-            if converted not in range(65, 91):
-                raise ValueError(
-                    f"The word should contain English alphabets only")
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
-    return
+    return content_flag
 
 
 def check_word():
@@ -86,24 +80,25 @@ def check_word():
     """
     attempt = 6
     while attempt > 0:
-        guess = str(input("Guess the word. Please enter a 5 letter word: \n"))
-        validate_data_length(guess)
-        validate_data_content(guess)
+        guess = str(input(f"{Styles.RESET}Guess the 5 letter word: \n"))
+        if validate_data_length(guess) is False:
+            continue
+        if validate_data_content(guess) is False:
+            continue
         guess = guess.upper()
-        validate_data_value(guess)
-        if guess == hidden_word:
-            print(f"{Styles.BOLD}Congratulations, YOU WIN !!!{Styles.RESET}\n")
+        if guess == actual_word:
+            print(f"{Styles.RESET}{Styles.BOLD}Congratulations, YOU WIN !!!\n")
             break
         else:
             attempt = attempt - 1
             print(f"You have {attempt} attempt(s) left \n")
-            for char, word in zip(hidden_word, guess):
-                if word in hidden_word and word in char:
-                    print(f"{Styles.GREEN} {word} {Styles.RESET}", end =' ')
-                elif word in hidden_word:
-                    print(f"{Styles.YELLOW} {word} {Styles.RESET}", end =' ')
+            for char_actual, char_guess in zip(actual_word, guess):
+                if char_guess == char_actual:
+                    print(f"{Styles.BOLD}{Styles.GREEN}{char_guess}", end=' ')
+                elif char_guess in actual_word:
+                    print(f"{Styles.BOLD}{Styles.BLUE}{char_guess}", end=' ')
                 else:
-                    print(f"{Styles.RED} {word} {Styles.RESET}", end =' ')
+                    print(f"{Styles.BOLD}{Styles.RED}{char_guess}", end=' ')
             if attempt == 0:
                 print(f"{Styles.BOLD} GAME OVER !!! {Styles.RESET}\n")
 
