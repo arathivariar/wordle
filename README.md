@@ -50,6 +50,7 @@ The flowchart for the application is as shown below:
 + Google Sheets   
 + Data Validations
 + Check Word 
++ Display Messages    
 
 
 # Language Used:
@@ -76,7 +77,13 @@ Data validations are done with the help of various functions checking the length
 
 Check word function compares the user input with the actual word and displays the relevant message to the user so that the game can be played. If the user guesses the word correctly, a message is displayed accordingly. In case the guess was partially correct, it will inform the same to the user. This function has a loop which gives the user six attempts to guess the hidden word.    
 
-![Check Word]( assets/screenshots/check_word.png)
+![Check Word]( assets/screenshots/check_word.png)    
+
+# Display Messages
+
+Display messages functionality ensures proper message is displayed throughout the game so that the player understands the game progress. The player is prompted to enter a new guess each time a wrong guess is entered. Also, the number of attempts left is displayed. Similarly, even if the word entered is wrong, but one or more letters are correct, that is displayed. A different message is displayed in case the letter and its position in the word is correct. The player can understand the progress and make an informed decision for the next guess. When the player guess the hidden word correctly, a success message is displayed.    
+ 
+![Display Messages]( assets/screenshots/display_messages.png)
 
 # Future Features:  
 
