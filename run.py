@@ -98,11 +98,11 @@ def check_word():
             print(f"You have {attempt} attempt(s) left \n")
             for char, word in zip(hidden_word, guess):
                 if word in hidden_word and word in char:
-                    print(u"\u001b[32m" + word + "\u001b[0m", end=" ")
+                    print(f"\033[38;2;0;255;0m", word, "\033[0m", end=" ")
                 elif word in hidden_word:
-                    print(u"\u001b[33m" + word + "\u001b[0m", end=" ")
+                    print(f"\033[38;2;0;0;255m", word, "\033[0m", end=" ")
                 else:
-                    print(u"\u001b[30m" + word + "\u001b[0m", end=" ")
+                    print(f"\033[38;2;255;0;0m", word, "\033[0m", end=" ")
             if attempt == 0:
                 print("\033[1m GAME OVER !!! \n")
 
