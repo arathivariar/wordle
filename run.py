@@ -25,20 +25,19 @@ def game_instruction():
     """
     Function to explain the game rules to the user
     """
-    print(f"""{Styles.BOLD} WELCOME TO WORDLE \n
-    =================================================={Styles.RESET}\n
-    Wordle is a single player game.\n
+    print(f"""{Styles.BOLD} ********** WELCOME TO WORDLE ********** \n
+    {Styles.RESET}
     The player has to guess a five letter English word.\n
-    You have six attempts.\n
+    You have six valid attempts.\n
     Your Progress Guide: \n
     {Styles.GREEN}
     Green indicates that the letter and its position is correct.
     {Styles.RESET}
     {Styles.BLUE}
-    Blue indicates that the letter is there, but in a different position.
+    Blue indicates that the letter is present, but in a different position.
     {Styles.RESET}
     {Styles.RED}
-    Red indicates that the letter not there in the word.
+    Red indicates that the letter is not present in the word.
     {Styles.RESET}""")
 
 
