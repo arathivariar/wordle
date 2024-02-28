@@ -59,10 +59,10 @@ The flowchart for the application is as shown below:
 # Game Instructions     
 
 Wordle is a single player game. A player must guess a five letter English word in six attempts.
-Your Progress Guide "✔➕❌"  
-"✔" Indicates that the letter at that position was guessed correctly. 
-"➕" indicates that the letter at that position is in the hidden word, but in a different position. 
-"❌" indicates that the letter at that position is wrong and isn't in the hidden word.    
+Your Progress Guide:
+Green indicates that the letter and its position is correct.\n
+Yellow indicates that the letter is there, but in a different position.\n
+Red indicates that the letter not there in the word.    
    
 ![Game Instructions](assets/screenshots/game_instructions.png)  
 
@@ -115,7 +115,6 @@ There are no unfixed bugs existing in this website as per my knowledge.
 * [Google Cloud]( https://console.cloud.google.com/)
 * [Google Sheets API](https://console.cloud.google.com/apis/api/sheets.googleapis.com)
 * [Google Drive API]( https://console.cloud.google.com/apis/api/drive.googleapis.com/)
-* [Colorama](https://pypi.org/project/colorama/)
 * Validating Python: [PEP8]( https://pep8ci.herokuapp.com/)
 
 
@@ -123,7 +122,8 @@ There are no unfixed bugs existing in this website as per my knowledge.
 * Flowchart: Powerpoint
 * Basic game structure: [Free Code Camp]( https://www.freecodecamp.org/news/building-a-wordle-game/)
 * Words used in Wordle: [Rock Paper Shotgun]( https://www.rockpapershotgun.com/wordle-past-answers)
-* Print Colors in Python terminal: [GeeksForGeeks](https://www.geeksforgeeks.org/print-colors-python-terminal/)
+* Print letters in a word horizonatally: [GeeksForGeeks](https://www.geeksforgeeks.org/print-a-list-in-python-horizontally/)
+* Print colours in Python terminal: [Haoyi's Programming Blog](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html#8-colors)
 * Love Sandwiches project
 * My Mentor Martina for her guidance and the Slack Community for their support.
 
