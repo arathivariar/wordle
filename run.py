@@ -16,7 +16,7 @@ SHEET = GSPREAD_CLIENT.open('words')
 
 words = SHEET.worksheet('words')
 data = words.get_all_values()
-# get a random word from the data list each time
+# get a random word from the word list each time
 hidden_word = random.choice(data)
 print(f"Hidden Word is {hidden_word}")  # to be removed before submitting
 styles = Styles()
