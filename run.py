@@ -23,7 +23,7 @@ print(f"Actual Word is {actual_word}")  # to be removed before submitting
 
 def game_instruction():
     """
-    Function to explain the game rules to the user
+    Function to display the game rules to the user
     """
     print(f"""{Styles.BOLD} ********** WELCOME TO WORDLE ********** \n
     {Styles.RESET}
@@ -43,7 +43,8 @@ def game_instruction():
 
 def validate_data_length(guess):
     """
-    Function to check whether the user input consists of 5 letters.
+    Function to validate the length of user input.
+    The length should be equal to 5.
     """
     len_flag = True
     try:
@@ -59,7 +60,8 @@ def validate_data_length(guess):
 
 def validate_data_content(guess):
     """
-    Function to check whether the user input contains alphabets only
+    Function to validate the content of user input.
+    The content should be English alphabets only.
     """
     content_flag = True
     try:
@@ -75,7 +77,8 @@ def validate_data_content(guess):
 
 def check_word():
     """
-    Function to check the word entered by user with the actual word
+    Function to compare the word entered by user with the actual word.
+    For each letter, appropriate messages are displayed to the user.
     """
     attempt = 6
     while attempt > 0:
@@ -104,7 +107,7 @@ def check_word():
 
 def main():
     """
-    Run all program functions
+    Main function to run all program functions
     """
     game_instruction()
     check_word()
