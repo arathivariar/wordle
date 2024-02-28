@@ -45,7 +45,6 @@ def validate_data_length(guess):
             raise ValueError(
                 f"Exactly 5 letters required, you provided {len(guess)}"
             )
-        break
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
     return
@@ -60,7 +59,6 @@ def validate_data_content(guess):
             raise ValueError(
                 f"The word should contain English alphabets only"
             )
-        break
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
     return
