@@ -47,8 +47,7 @@ def validate_data_length(guess):
             )
             # break
         else:
-            print("Inside Else Block")
-            # break
+            break
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
     return
@@ -65,8 +64,7 @@ def validate_data_content(guess):
             )
             # break
         else:
-            print("Inside Else Block")
-            # break
+            break
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
     return
