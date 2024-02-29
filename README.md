@@ -95,8 +95,14 @@ Display messages functionality ensures proper message is displayed throughout th
 
 # Testing:  
 
-The application is tested thoroughly by entering all sorts of valid and invalid user inputs and ensuring the application can handle it all without breaking the code.
-I have tested the website on both Google Chrome (used for the development) and Microsoft Edge to ensure that the website worked on different browsers.
+Manual Testing:    
+
++ Validated the code with CI Python PEP8 Linter verified that the code passed without any errors or warnings.    
++ The application is tested thoroughly by entering all sorts of valid and invalid user inputs and ensuring the application can handle it all without breaking the code.        
++ A couple of beta testers (my friends and family) have tested the application and confirmed everything is working as expected without any issues.
++ I have tested the application in my local terminal, my Gitpod workspace terminal, and in the Code Institute Heroku terminal. Everything is working fine.    
++ I have tested the website on both Google Chrome (used for the development) and Microsoft Edge to ensure that the website is compatible with different browsers.    
+
 
 # Validator Testing:  
 
