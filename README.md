@@ -60,12 +60,14 @@ The flowchart for the application is as shown below:
 
 # Game Instructions     
 
-Wordle is a single player game. A player must guess a five letter English word in six attempts.
-Your Progress Guide:
-Green indicates that the letter and its position is correct.\n
-Yellow indicates that the letter is there, but in a different position.\n
-Red indicates that the letter not there in the word.    
++ A player must guess a five letter English word in six attempts.    
++ Each guess must be a valid five letter English word.    
++ The color of each letter will change to show you how close your guess was.    
++ Green coloured text indicates that the letter and its position is correct.    
++ Blue coloured text indicates that the letter is present in the word, but in a different position.    
++ Red coloured text indicates that the letter not present in the word.    
    
+      
 ![Game Instructions](assets/screenshots/game_instructions.png)  
 
 
