@@ -66,14 +66,15 @@ The flowchart for the application is as shown below:
 + Green coloured text indicates that the letter and its position is correct.    
 + Blue coloured text indicates that the letter is present in the word, but in a different position.    
 + Red coloured text indicates that the letter not present in the word.    
-   
-      
+
+
 ![Game Instructions](assets/screenshots/game_instructions.png)  
 
 
 # Data Validations
 
-Data validations are done with the help of various functions checking the length of the input string, whether it has valid ASCII characters, whether the input string contains English alphabets only etc.    
+Data validations are done with the help of two functions. One function for checking the length of the input string and the second function for checking whether the input string contains English alphabets only. If the length is not equal to five, an error message will be displayed prompting the user to enter a 5 letter word. Similarly, if you enter any non-alphabet character like a number or special characters or whitespace, another error message is displayed and the user is prompted to guess again.    
+  
 
 ![Data Validations](assets/screenshots/data_validations.png)  
 
