@@ -74,19 +74,21 @@ The flowchart for the application is as shown below:
 # Data Validations
 
 Data validations are done with the help of two functions. One function for checking the length of the input string and the second function for checking whether the input string contains English alphabets only. If the length is not equal to five, an error message will be displayed prompting the user to enter a 5 letter word. Similarly, if you enter any non-alphabet character like a number or special characters or whitespace, another error message is displayed and the user is prompted to guess again.    
-  
+
 
 ![Data Validations](assets/screenshots/data_validations.png)  
 
 # Check Word
 
-Check word function compares the user input with the actual word and displays the relevant message to the user so that the game can be played. If the user guesses the word correctly, a message is displayed accordingly. In case the guess was partially correct, it will inform the same to the user. This function has a loop which gives the user six attempts to guess the hidden word.    
+Check word function compares the word guessed by the user with the actual word and displays a relevant message to the user accordingly. If the user guesses the word correctly, a success message is displayed. In case the guess was partially correct, it will inform the same to the user. This function has a loop which gives the user six valid attempts to guess the hidden word.       
+
 
 ![Check Word]( assets/screenshots/check_word.png)    
 
 # Display Messages
 
-Display messages functionality ensures proper message is displayed throughout the game so that the player understands the game progress. The player is prompted to enter a new guess each time a wrong guess is entered. Also, the number of attempts left is displayed. Similarly, even if the word entered is wrong, but one or more letters are correct, that is displayed. A different message is displayed in case the letter and its position in the word is correct. The player can understand the progress and make an informed decision for the next guess. When the player guess the hidden word correctly, a success message is displayed.    
+Display messages functionality ensures that a proper message is displayed throughout the game so that the player understands the game progress. These messages helps the user to make an informed guess in the next attempt. The player is prompted to enter a new guess each time a wrong guess is entered. Also, the number of attempts left is displayed. Similarly, even if the word entered is wrong, but one or more letters are correct, that is displayed. A different message is displayed in case the letter and its position in the word is correct. The player can understand the progress and how close the guess was to the hidden word. When the player guess the hidden word correctly, a success message is displayed. Or else, if the player runs out of the six valid attempts, the game over message is displayed.    
+   
  
 ![Display Messages]( assets/screenshots/display_messages.png)
 
