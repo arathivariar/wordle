@@ -134,7 +134,8 @@ There are no unfixed bugs existing in this application as per my knowledge.
 * Print letters in a word horizonatally: [GeeksForGeeks](https://www.geeksforgeeks.org/print-a-list-in-python-horizontally/)
 * Print colours in Python terminal: [Haoyi's Programming Blog](https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html#8-colors)
 * Love Sandwiches project
-* My Mentor Martina for her guidance and the Slack Community for their support.
+* My Mentor Martina for her guidance and the Slack Community for their support.    
+* My friends and family who helped me to test the application.    
 
 # Deployment:
 
