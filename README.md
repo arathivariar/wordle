@@ -113,8 +113,9 @@ Manual Testing:
 
 # Bugs:  
 
-During the development phase, there were a few minor bugs which were fixed with the help of various tutorials available on Google.
-There are no unfixed bugs existing in this website as per my knowledge.
+During the development phase, there were a few bugs related to displaying the feedback messages to the user during the game. When I started the development, I was using a different progress guide but later I implemented the current colour coded messages which made it a better gaming experience for the user. All the bugs were fixed with the help of various tutorials available on Google. I have given due credit to all the content in the credits section of this file.
+There are no unfixed bugs existing in this application as per my knowledge.    
+
 
 # Libraries and Programs Used:  
 
