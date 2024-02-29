@@ -1,7 +1,9 @@
 
 # Wordle    
 
-Wordle is a word puzzle game that challenges its players to guess a five-letter  English word in six attempts. I have created a version of Wordle with a few minor variations using Python.
+Wordle is a web-based word puzzle game created and developed by Welsh software engineer Josh Wardle. Players have six attempts to guess a five-letter word, with feedback given for each guess in the form of colored tiles indicating when letters match or occupy the correct position. Wordle was purchased by The New York Times Company in January 2022 and moved to the newspaper's Games section in February. It is quite popular among internet users and the game became a viral phenomenon on Twitter in late December 2021. I personally used to play it everyday. So when I had to create a game, I didn't think twice before choosing Wordle.
+I have created my version of Wordle with a few minor variations from the original game using Python.    
+
 
  ![Wordle](assets/screenshots/wordle.png)   
 
